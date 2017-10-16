@@ -8,29 +8,28 @@ I decided to go with the Laravel framework as the other organization volunteers 
 ## Phases and Tasks
 
 1. Phase 1: Minimum Viable Product
-  1a. Member Information
-  	- [x] Member Dashboard
-  	- [x] Profiles
-  	- [x] Waivers
-  	- [x] Membership
-  1b. Team Management
-  	- [x] Team
-  	- [ ] Team Members
-  	- [x] Team Managers
-  	- [x] Team Dashboard
-  1c. Race Registration
-  	- [ ] Race Event
-  	- [ ] Race Registration
-  	- [ ] Race Registration Crews
-  	- [ ] Race Registration Crew Manifests
-  1d. Basic admin dashboard
-  	- [ ] Members Info
-  	- [ ] Teams Info
-  	- [ ] Race Registrations Info
-
-2. Phase 2: Additional needs/wants and iterate
-
-3. Phase 3: Review
+   1. Member Information
+      - [x] Member Dashboard
+      - [x] Profiles
+      - [x] Waivers
+      - [x] Membership
+   1. Team Management
+      - [x] Team
+      - [x] Team Members
+      - [x] Team Managers
+      - [x] Team Dashboard
+   1. Race Registration
+      - [x] Race Event
+      - [x] Race Registration
+      - [x] Race Registration Crews
+      - [ ] Race Registration Crew Manifests
+      - [ ] Race Regisration Contacts
+   1. Basic admin dashboard
+      - [ ] Members Info
+      - [ ] Teams Info
+      - [ ] Race Registrations Info
+1. Phase 2: Additional needs/wants and iterate
+1. Phase 3: Review
 
 ## Goals
 
