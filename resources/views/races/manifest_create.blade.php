@@ -1,0 +1,17 @@
+@extends('layouts.base')
+
+@section('content')
+<p><a href="/race_registration/{{$race_reg->id}}">Back to race registration page</a></p>
+<h1>Race Manifest: {{ $race_crew->name }}</h1>
+<p>Team: {{ $team->name }}</p>
+<p>Race: {{ $race_event->name }}</p>
+{{ Form::open(['action' => ['RaceController@manifest_store', $race_crew->id], 'method' => 'POST']) }}
+<div class="well">
+	<ul style="font-size: 18px;">
+		@foreach($roster as $member)
+		<li>{{ Form::checkbox('members[]', $member->id, null, []) }} {{ $member->name }}</li>
+		@endforeach
+	</ul>
+</div>
+{{ Form::close() }}
+@endsection
