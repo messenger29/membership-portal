@@ -13,7 +13,14 @@ class CreateRaceRegistrationCrewManifestsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('race_registration_crew_manifests', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('race_registration_crew_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedTinyInteger('approved')->default(0);
+            $table->unsignedInteger('version');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class CreateRaceRegistrationCrewManifestsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('race_registration_crew_manifests');
     }
 }

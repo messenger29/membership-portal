@@ -23,8 +23,92 @@ class MembershipsTableSeeder extends Seeder
 	          'updated_at' => '2016-01-05 00:00:00',
         ]);
 
-       DB::table('memberships')->insert([
+       	DB::table('memberships')->insert([
 	        	'user_id' => '1',
+	        	'waiver_id' => '2',
+	        	'profile_id' => '1',
+	        	'membership_type_id' => '1',
+	        	'year' => 2017,
+	        	'active' => 1,
+	        	'paid' => 1,
+	          'created_at' => '2017-01-05 00:00:00',
+	          'updated_at' => '2017-01-05 00:00:00',
+	      ]);
+
+       	DB::table('memberships')->insert([
+	        	'user_id' => '5',
+	        	'waiver_id' => '2',
+	        	'profile_id' => '1',
+	        	'membership_type_id' => '1',
+	        	'year' => 2017,
+	        	'active' => 1,
+	        	'paid' => 1,
+	          'created_at' => '2017-01-05 00:00:00',
+	          'updated_at' => '2017-01-05 00:00:00',
+	      ]);
+
+	      DB::table('memberships')->insert([
+	        	'user_id' => '6',
+	        	'waiver_id' => '2',
+	        	'profile_id' => '1',
+	        	'membership_type_id' => '1',
+	        	'year' => 2017,
+	        	'active' => 1,
+	        	'paid' => 1,
+	          'created_at' => '2017-01-05 00:00:00',
+	          'updated_at' => '2017-01-05 00:00:00',
+	      ]);
+
+	      DB::table('memberships')->insert([
+	        	'user_id' => '7',
+	        	'waiver_id' => '2',
+	        	'profile_id' => '1',
+	        	'membership_type_id' => '1',
+	        	'year' => 2017,
+	        	'active' => 1,
+	        	'paid' => 1,
+	          'created_at' => '2017-01-05 00:00:00',
+	          'updated_at' => '2017-01-05 00:00:00',
+	      ]);
+
+	      DB::table('memberships')->insert([
+	        	'user_id' => '8',
+	        	'waiver_id' => '2',
+	        	'profile_id' => '1',
+	        	'membership_type_id' => '1',
+	        	'year' => 2017,
+	        	'active' => 1,
+	        	'paid' => 1,
+	          'created_at' => '2017-01-05 00:00:00',
+	          'updated_at' => '2017-01-05 00:00:00',
+	      ]);
+
+	      DB::table('memberships')->insert([
+	        	'user_id' => '9',
+	        	'waiver_id' => '2',
+	        	'profile_id' => '1',
+	        	'membership_type_id' => '1',
+	        	'year' => 2017,
+	        	'active' => 1,
+	        	'paid' => 1,
+	          'created_at' => '2017-01-05 00:00:00',
+	          'updated_at' => '2017-01-05 00:00:00',
+	      ]);
+
+	      DB::table('memberships')->insert([
+	        	'user_id' => '10',
+	        	'waiver_id' => '2',
+	        	'profile_id' => '1',
+	        	'membership_type_id' => '1',
+	        	'year' => 2017,
+	        	'active' => 1,
+	        	'paid' => 1,
+	          'created_at' => '2017-01-05 00:00:00',
+	          'updated_at' => '2017-01-05 00:00:00',
+	      ]);
+
+	      DB::table('memberships')->insert([
+	        	'user_id' => '11',
 	        	'waiver_id' => '2',
 	        	'profile_id' => '1',
 	        	'membership_type_id' => '1',

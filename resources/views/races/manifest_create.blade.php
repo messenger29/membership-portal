@@ -9,9 +9,14 @@
 <div class="well">
 	<ul style="font-size: 18px;">
 		@foreach($roster as $member)
-		<li>{{ Form::checkbox('members[]', $member->id, null, []) }} {{ $member->name }}</li>
+			@if($member->rostered)
+				<li>{{ $member->name }}</li>
+			@else
+				<li>{{ Form::checkbox('members[]', $member->id, null, []) }} {{ $member->name }}</li>
+			@endif
 		@endforeach
 	</ul>
 </div>
+<p>{{ FORM::submit('Submit', ['class' => 'btn btn-default btn-primary']) }}</p>
 {{ Form::close() }}
 @endsection

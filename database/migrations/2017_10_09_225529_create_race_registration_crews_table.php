@@ -22,6 +22,7 @@ class CreateRaceRegistrationCrewsTable extends Migration
             $table->unsignedSmallInteger('crew_rank')->nullable();
             $table->string('partners')->nullable();
             $table->text('notes')->nullable();
+            $table->unsignedInteger('version')->default(0);
             $table->unsignedTinyInteger('approved')->default(0);
             $table->timestamps();
         });

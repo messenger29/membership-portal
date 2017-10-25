@@ -8,7 +8,11 @@
 	<div class="well">
 		<h3>{{ $crew->name }}</h3>
 		<p>Type: {{ $crew->crew_type }}</p>
-		<p><a class="btn btn-default" href="/race_manifest/{{ $crew->id }}/create">Submit Manifest</a></p>
+		@if($crew->version)
+			<p><a href="/race_manifest/{{ $crew->id }}/edit" class="btn btn-default">Edit Manifest</a></p>
+		@else
+			<p><a href="/race_manifest/{{ $crew->id }}/create" class="btn btn-default">Submit Manifest</a></p>
+		@endif
 	</div>
 @endforeach
 @endsection

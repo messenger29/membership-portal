@@ -44,6 +44,7 @@ Route::get('race_registration/{id}', 'RaceController@register_show');
 // Route::delete('race_registration/{id}', 'RaceController@register_destroy');
 // submit/show/edit race manifests
 Route::get('race_manifest/{crew_id}/create', 'RaceController@manifest_create');
-Route::put('race_manifest/{crew_id}', 'RaceController@manifest_store');
+Route::post('race_manifest/{crew_id}', 'RaceController@manifest_store');
+Route::get('race_manifest/{crew_id}/edit', 'RaceController@manifest_edit');
 Auth::routes();
 
