@@ -9,7 +9,7 @@
 <div class="well">
 	<ul style="font-size: 18px;">
 		@foreach($roster as $member)
-			@if($member->rostered)
+			@if($member->rostered == -1)
 				<li>{{ $member->name }}</li>
 			@else
 				<li>{{ Form::checkbox('members[]', $member->id, null, []) }} {{ $member->name }}</li>
