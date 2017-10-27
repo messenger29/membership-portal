@@ -110,86 +110,11 @@ class RaceController extends Controller
     	
     }
 
-    public function manifest_create($crew_id){
-        $race_crew = RaceRegistrationCrew::find($crew_id);
-        if(!$race_crew){
-            return redirect('/dashboard')->with('status', 'Please register for race first.');
-        }
-
-        $race_reg = $race_crew->race_registration()->first();
-        if(!$race_reg){
-            return redirect('/dashboard')->with('status', 'Please register for race first.');
-        }
-        
-        $race_event = $race_reg->race_event()->first();
-        $team = $race_reg->team()->first();
-        $roster = $team->users()->rightJoin('memberships','users.id', 'memberships.user_id')->where('memberships.active', 1)->where('year', $this->currentYear)->orderBy('name')->get();
-
-        $active_roster = $this->get_active_roster($race_reg->id);
-
-        foreach($roster as $member){
-            if(in_array($member->id, $active_roster)){
-                $member['rostered'] = 1;
-            }
-            else{
-                $member['rostered'] = 0;
-            }
-        }
-
-        if(!$this->check_team_manager($team->id)){
-            return redirect('dashboard')->with('error', 'Access Denied.');
-        }
-
-        return view('races.manifest_create', [
-            'race_crew' => $race_crew,
-            'race_reg' => $race_reg,
-            'race_event' => $race_event,
-            'team' => $team,
-            'roster' => $roster,
-        ]);
-    }
-
-    public function manifest_store(Request $request, $crew_id){
-        $race_crew = RaceRegistrationCrew::find($crew_id);
-
-        $new_version = $race_crew->version + 1;
-
-        foreach($request->members as $member_id){
-            $manifest = new RaceRegistrationCrewManifest();
-            $manifest->race_registration_crew_id = $crew_id;
-            $manifest->user_id = $member_id;
-            $manifest->version = $new_version;
-            $manifest->save();
-        }
-
-        $race_crew->version = $new_version;
-        $race_crew->save();
-
-        return redirect('/race_registration/'.$race_crew->race_registration_id)->with('success', 'Manifest saved.');
-    }
-
-    public function manifest_edit($crew_id){
-        
-    }
 
     private function check_team_manager($team_id){
     	$user = Auth::user();
     	return $user->team_managers->where('team_id', $team_id)->where('active', 1)->count();
     }
 
-    private function get_active_roster($race_reg_id){
-        $active_roster = array();
-
-        $race_crews = RaceRegistrationCrew::where('race_registration_id',$race_reg_id)->get();
-
-        foreach($race_crews as $crew){
-            $manifest = RaceRegistrationCrewManifest::where('race_registration_crew_id', $crew->id)->where('version', $crew->version)->get();
-            foreach($manifest as $member){
-                $active_roster[] = $member->user_id;
-            }
-        }
-
-        return $active_roster;
-
-    }
+    
 }
