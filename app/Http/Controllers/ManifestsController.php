@@ -129,6 +129,11 @@ class ManifestsController extends Controller
       ]);
     }
 
+
+    /*
+     * helper functions
+     */ 
+
     private function check_team_manager($team_id){
     	$user = Auth::user();
     	return $user->team_managers->where('team_id', $team_id)->where('active', 1)->count();
