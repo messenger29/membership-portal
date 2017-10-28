@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Model\Team;
 use App\Model\RaceEvent;
+use App\Model\RaceRegistration;
 
 class ManageTeamsController extends Controller
 {
@@ -39,6 +40,12 @@ class ManageTeamsController extends Controller
 
   	// get any active upcoming race events
   	$race_events = RaceEvent::where('event_start_date','>',date('Y-m-d'))->where('active', 1)->orderBy('event_start_date')->get();
+
+    foreach($race_events as $race_event){
+      $race_reg = RaceRegistration::where('race_event_id', $race_event->id)->where('team_id', $team_id)->first();
+
+      $race_event['registered'] = $race_reg ? $race_reg->id : 0;
+    }
 
   	// get all users associated with the team
   	$members = $team->users()->orderBy('name')->get();

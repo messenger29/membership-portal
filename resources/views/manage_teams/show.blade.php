@@ -18,7 +18,11 @@
 				Location: {{ $race_event->location}}<br/>
 				Registration Deadline: {{ $race_event->register_end_date }}
 			</p>
-			<p><a class="btn btn-default" href="/race/{{ $race_event->id }}/register/{{ $team->id }}">Register for {{ $race_event->name }}</a></p>
+			@if($race_event->registered)
+				<p><a class="btn btn-default" href="/race_registration/{{ $race_event->registered }}">Review Registration for {{ $race_event->name }}</a></p>
+			@else
+				<p><a class="btn btn-default" href="/race/{{ $race_event->id }}/register/{{ $team->id }}">Register for {{ $race_event->name }}</a></p>
+			@endif
 		@endforeach
 	@else
 		<p>No upcoming races has been set yet</p>
