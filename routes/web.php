@@ -51,5 +51,13 @@ Auth::routes();
  * Administrative URLs
  */
 
-/** waivers **/
+/** admin - waivers **/
 // Route::resource('admin/waivertext', 'WaivertextController');
+/** admin - membership **/
+// Route::resource('admin/membership', 'AdminMembershipController');
+/** admin - teams **/
+// Route::resource('admin/team', 'AdminTeamsController');
+/** admin - race management **/
+// Route::resource('admin/race', 'AdminRaceController');
+/** admin - race registrations **/
+// Route::resource('admin/race/registrations', 'AdminRaceRegistrationController');
