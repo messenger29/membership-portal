@@ -22,7 +22,6 @@ Route::resource('waivers', 'WaiversController', ['except' => ['destroy']]);
 Route::resource('profiles', 'ProfilesController', ['except' => ['destroy']]);
 Route::get('/profiles/{id}/confirm', 'ProfilesController@confirm');
 Route::resource('membership', 'MembershipController', ['only' => ['index', 'store']]);
-// Route::resource('admin/waivertext', 'WaivertextController');
 Route::resource('teams', 'TeamsController', ['except' => ['destory', 'create', 'store']]);
 
 Route::get('/manage/team', 'ManageTeamsController@index');
@@ -34,17 +33,23 @@ Route::get('/manage/team/{id}/edit', 'ManageTeamsController@edit_team');
 Route::put('/manage/team/{id}', 'ManageTeamsController@update_team');
 
 Route::get('race/{id}', 'RaceRegistrationController@show');
-// register race
+/** register race **/
 Route::get('race/{id}/register/{team_id}', 'RaceRegistrationController@register_create');
 Route::post('race/{id}/register', 'RaceRegistrationController@register_store');
-// show/edit race registration
+/** show/edit race registration **/
 Route::get('race_registration/{id}', 'RaceRegistrationController@register_show');
 // Route::get('race_registration/{id}/edit', 'RaceRegistrationController@register_edit');
 // Route::put('race_registration/{id}', 'RaceRegistrationController@register_update');
 // Route::delete('race_registration/{id}', 'RaceRegistrationController@register_destroy');
-// submit/show/edit race manifests
+/** submit/show/edit race manifests **/
 Route::get('race_manifest/{crew_id}/create', 'ManifestsController@create');
 Route::post('race_manifest/{crew_id}', 'ManifestsController@store');
 Route::get('race_manifest/{crew_id}/edit', 'ManifestsController@edit');
 Auth::routes();
 
+/*
+ * Administrative URLs
+ */
+
+/** waivers **/
+// Route::resource('admin/waivertext', 'WaivertextController');
