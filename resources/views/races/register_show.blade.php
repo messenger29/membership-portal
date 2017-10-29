@@ -8,6 +8,7 @@
 	<div class="well">
 		<h3>{{ $crew->name }}</h3>
 		<p>Type: {{ $crew->crew_type }}</p>
+		<p>List: {{ implode(', ', $crew->manifest) }}</p>
 		@if($crew->version)
 			<p><a href="/race_manifest/{{ $crew->id }}/edit" class="btn btn-default">Edit Manifest</a></p>
 		@else

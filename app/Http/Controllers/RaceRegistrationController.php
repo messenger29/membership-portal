@@ -91,6 +91,18 @@ class RaceRegistrationController extends Controller
 
         $race_crews = $race_reg->race_registration_crews()->get();
 
+        // get list of member's name that are rostered for each crew
+        foreach($race_crews as $race_crew){
+            $manifestList = array();
+
+            $race_manifest = RaceRegistrationCrewManifest::where('race_registration_crew_id', $race_crew->id)->where('version', $race_crew->version)->get();
+            foreach($race_manifest as $member){
+                $manifestList[] = $member->user->name;
+            }
+
+            $race_crew['manifest'] = $manifestList;
+        }
+
         return view('races.register_show', [
             'race_reg' => $race_reg,
             'race_crews' => $race_crews,
