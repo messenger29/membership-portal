@@ -10,7 +10,7 @@ use App\Model\RaceRegistrationCrew;
 use App\Model\RaceRegistrationCrewManifest;
 use App\Model\Team;
 
-class RaceController extends Controller
+class RaceRegistrationController extends Controller
 {
 	protected $user;
     protected $currentYear;

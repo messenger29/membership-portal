@@ -49,7 +49,7 @@ class ManifestsController extends Controller
       //get roster of paddlers that are selected on other crews
       $race_roster = $this->get_race_roster($race_reg->id);
 
-      $team_roster = note_roster_status($team_roster, $race_roster);
+      $team_roster = $this->note_roster_status($team_roster, $race_roster);
       // foreach($roster as $member){
       //     if(in_array($member->id, $race_roster)){
       //         $member['rostered'] = -1;

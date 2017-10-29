@@ -33,15 +33,15 @@ Route::get('/manage/team/{id}/roster', 'ManageTeamsController@roster');
 Route::get('/manage/team/{id}/edit', 'ManageTeamsController@edit_team');
 Route::put('/manage/team/{id}', 'ManageTeamsController@update_team');
 
-Route::get('race/{id}', 'RaceController@show');
+Route::get('race/{id}', 'RaceRegistrationController@show');
 // register race
-Route::get('race/{id}/register/{team_id}', 'RaceController@register_create');
-Route::post('race/{id}/register', 'RaceController@register_store');
+Route::get('race/{id}/register/{team_id}', 'RaceRegistrationController@register_create');
+Route::post('race/{id}/register', 'RaceRegistrationController@register_store');
 // show/edit race registration
-Route::get('race_registration/{id}', 'RaceController@register_show');
-// Route::get('race_registration/{id}/edit', 'RaceController@register_edit');
-// Route::put('race_registration/{id}', 'RaceController@register_update');
-// Route::delete('race_registration/{id}', 'RaceController@register_destroy');
+Route::get('race_registration/{id}', 'RaceRegistrationController@register_show');
+// Route::get('race_registration/{id}/edit', 'RaceRegistrationController@register_edit');
+// Route::put('race_registration/{id}', 'RaceRegistrationController@register_update');
+// Route::delete('race_registration/{id}', 'RaceRegistrationController@register_destroy');
 // submit/show/edit race manifests
 Route::get('race_manifest/{crew_id}/create', 'ManifestsController@create');
 Route::post('race_manifest/{crew_id}', 'ManifestsController@store');
