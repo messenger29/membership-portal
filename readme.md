@@ -22,8 +22,8 @@ I decided to go with the Laravel framework as the other organization volunteers 
       - [x] Race Event
       - [x] Race Registration
       - [x] Race Registration Crews
-      - [ ] Race Registration Crew Manifests
-      - [ ] Race Regisration Contacts
+      - [x] Race Registration Crew Manifests
+      - [ ] Race Registration Contacts
    1. Basic admin dashboard
       - [ ] Members Info
       - [ ] Teams Info
