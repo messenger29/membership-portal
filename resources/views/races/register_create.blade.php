@@ -11,7 +11,7 @@
 	</div>
 </div>
 <div class="well">
-	{{ Form::open(['action' => ['RaceController@register_store', $race_event->id]]) }}
+	{{ Form::open(['action' => ['RaceRegistrationController@register_store', $race_event->id]]) }}
 	{{ Form::hidden('team_id', $team->id) }}
 	{{ Form::hidden('race_event_id', $race_event->id) }}
 	<div id="crew_section">
