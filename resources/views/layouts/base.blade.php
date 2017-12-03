@@ -28,7 +28,7 @@
     </div>
 
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script> --}}
 </body>
 </html>
